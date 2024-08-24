@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000;
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .container .prediction {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container .suggestion {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border-left: 5px solid #00796b;
+        }
+        .container button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+
+        <div class="prediction">
+            {{ prediction_text }}
+        </div>
+
+        <div class="suggestion">
+            <h3>Remarks:</h3>
+            <p>{{ remarks }}</p>
+        </div>
+
+        <div class="suggestion">
+            <h3>Suggestions:</h3>
+            <p>{{ suggestion }}</p>
+        </div>
+
+        <form action="{{ url_for('home') }}">
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+</body>
+</html>
